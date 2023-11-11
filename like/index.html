@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Мини-социальная сеть</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+    
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    
+        .lenta-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            background-color: #e9ecef; /* Пастельный серый цвет */
+            padding: 10px;
+            border-radius: 8px;
+            width: 100%; /* Занимает всю ширину родительского контейнера */
+            text-align: center;
+        }
+    
+        .card {
+            margin: 10px;
+            width: 300px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+    
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .card-img-top {
+            object-fit: cover;
+            height: 200px;
+            cursor: pointer;
+        }
+    
+        .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+        }
+    
+        .card-title {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+    
+        .comment {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+    
+        .like-button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<div class="header">
+    <img src="logo.jpg" alt="Логотип" height="50">
+    <div>
+        <button type="button" class="btn btn-outline-primary my-button">Лента</button>
+        <button type="button" class="btn btn-outline-primary my-button">Мой блог</button>
+        <button type="button" class="btn btn-outline-primary my-button">Контакты</button>
+    </div>
+</div>
+
+<div class="content">
+    <h1 class="lenta-title">Моя лента</h1>
+
+    <div class="d-flex align-items-stretch justify-content-center flex-wrap">
+        <div class="card">
+            <img src="girl1.jpg" class="card-img-top" alt="Картинка 1" data-card-id="1">
+            <div class="card-body">
+                <h5 class="card-title">sailorpixx</h5>
+                <div id="likeButtonContainer1" class="like-button"></div>
+                <div class="comment" id="commentContainer1">
+                    <span>Awesome shot!</span>
+                    <div id="commentLikeButtonContainer1" class="like-button"></div>
+                </div>
+                <div class="comment" id="commentContainer1_2">
+                    <span>Beautiful!</span>
+                    <div id="commentLikeButtonContainer1_2" class="like-button"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="girl2.jpg" class="card-img-top" alt="Картинка 2" data-card-id="2">
+            <div class="card-body">
+                <h5 class="card-title">abc_official</h5>
+                <div id="likeButtonContainer2" class="like-button"></div>
+                <div class="comment" id="commentContainer2">
+                    <span>Nice photo!</span>
+                    <div id="commentLikeButtonContainer2" class="like-button"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="girl3.jpg" class="card-img-top" alt="Картинка 3" data-card-id="3">
+            <div class="card-body">
+                <h5 class="card-title">ivanova_</h5>
+                <div id="likeButtonContainer3" class="like-button"></div>
+                <div class="comment" id="commentContainer3">
+                    <span>Great work!</span>
+                    <div id="commentLikeButtonContainer3" class="like-button"></div>
+                </div>
+                <div class="comment" id="commentContainer3_2">
+                    <span>Amazing!</span>
+                    <div id="commentLikeButtonContainer3_2" class="like-button"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+<script>
+    ReactDOM.render(e(App), document.getElementById('root'));
+</script>
+
+<!-- Загрузка нашего компонента React. -->
+<script src="like_button.js"></script>
+
+</body>
+</html>
